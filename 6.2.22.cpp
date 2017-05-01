@@ -57,11 +57,9 @@ struct Client
 
 struct Apartment
 {
-	// pointers
 	Apartment* Next;
 	Apartment* Previous;
 
-	// properties
 	string Region;
 	string Address;
 	string Type;
@@ -73,12 +71,11 @@ struct Apartment
 	// output
 	void Display()
 	{
-		cout << "\nÐåãèîí: " << Region << "\nÀäðåñ: " << Address << "\nÝòàæ: " \
-		<< Floor << "\nÏëîùàäü: " << Area << "\nÒèï ïëàíèðîâêè: " << Type \
-		<< "\nÖåíà: " << Cost << "\n\n";
+		cout << "\nÃÃ¥Ã£Ã¨Ã®Ã­: " << Region << "\nÃ€Ã¤Ã°Ã¥Ã±: " << Address << "\nÃÃ²Ã Ã¦: " \
+		<< Floor << "\nÃÃ«Ã®Ã¹Ã Ã¤Ã¼: " << Area << "\nÃ’Ã¨Ã¯ Ã¯Ã«Ã Ã­Ã¨Ã°Ã®Ã¢ÃªÃ¨: " << Type \
+		<< "\nÃ–Ã¥Ã­Ã : " << Cost << "\n\n";
 	}
 
-	// constructor
 	Apartment(string region, string address, int floor, \
 	double area, string type, int cost)
 	{
@@ -94,7 +91,6 @@ struct Apartment
 
 	}
 
-	// copying constructor
 	Apartment(const Apartment* info)
 	{
 		Region = info -> Region;
@@ -143,11 +139,11 @@ struct Base
 		// checking NULL
 		if (info == NULL || FindClient(info -> Surname, info -> Name) == NULL)
 		{
-			cout << "Îøèáêà.\n";
+			cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ .\n";
 			return false;
 		}
 
-		// deleting the reader
+		// deleting 
 		if (info == LastClient)
 		{
 			LastClient = LastClient -> Previous;
@@ -250,7 +246,7 @@ struct Base
 			Temp = Temp -> Next;
 		}
 		if (!check)
-			cout << "Íè÷åãî íå íàéäåíî. Ïîïðîáóéòå èçìåíèòü ïàðàìåòðû ïîèñêà.\n";
+			cout << "ÃÃ¨Ã·Ã¥Ã£Ã® Ã­Ã¥ Ã­Ã Ã©Ã¤Ã¥Ã­Ã®. ÃÃ®Ã¯Ã°Ã®Ã¡Ã³Ã©Ã²Ã¥ Ã¨Ã§Ã¬Ã¥Ã­Ã¨Ã²Ã¼ Ã¯Ã Ã°Ã Ã¬Ã¥Ã²Ã°Ã» Ã¯Ã®Ã¨Ã±ÃªÃ .\n";
 		return NULL;
 	}
 
@@ -259,7 +255,7 @@ struct Base
 		// checking NULL
 		if (info == NULL || FindApartment(info -> Address) == NULL)
 		{
-			cout << "Îøèáêà.\n";
+			cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ .\n";
 			return false;
 		}
 
@@ -467,9 +463,9 @@ struct Menu
 	// choosing the command
 	static int ChooseCommand(Base* info)
 	{
-		cout << "\nÂûáåðèòå îäíó èç ñëåäóþùèõ êîìàíä: \
-		\n 1. Ñïèñîê ïðåäëîæåíèé\n 2. Äîáàâèòü íîâîå ïðåäëîæåíèå\n 3. Íàéòè\n \
-4. Êóïèòü\n 5. Èíôîðìàöèÿ î ïðîäàâöå\n 6. Ñîõðàíèòü\n 7. Âûõîä: \n";
+		cout << "\nÃ‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã®Ã¤Ã­Ã³ Ã¨Ã§ Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ãµ ÃªÃ®Ã¬Ã Ã­Ã¤: \
+		\n 1. Ã‘Ã¯Ã¨Ã±Ã®Ãª Ã¯Ã°Ã¥Ã¤Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã©\n 2. Ã„Ã®Ã¡Ã Ã¢Ã¨Ã²Ã¼ Ã­Ã®Ã¢Ã®Ã¥ Ã¯Ã°Ã¥Ã¤Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥\n 3. ÃÃ Ã©Ã²Ã¨\n \
+4. ÃŠÃ³Ã¯Ã¨Ã²Ã¼\n 5. ÃˆÃ­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¿ Ã® Ã¯Ã°Ã®Ã¤Ã Ã¢Ã¶Ã¥\n 6. Ã‘Ã®ÃµÃ°Ã Ã­Ã¨Ã²Ã¼\n 7. Ã‚Ã»ÃµÃ®Ã¤: \n";
 		int command;
 		command = CheckForInt();
 		if (command == 1) {
@@ -502,7 +498,7 @@ struct Menu
 			return 1;
 		}
 		else {
-			cout << "Îøèáêà. Ïîïðîáóéòå ñíîâà.\n";
+			cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ . ÃÃ®Ã¯Ã°Ã®Ã¡Ã³Ã©Ã²Ã¥ Ã±Ã­Ã®Ã¢Ã .\n";
 			return 0;
 		}
 	}
@@ -517,27 +513,27 @@ struct Menu
 	static void Add(Base* info)
 	{
 			Apartment* ApartmentToAdd = new Apartment("", "", 0, 0, "", 0);
-			cout << "Ðåãèîí: ";
+			cout << "ÃÃ¥Ã£Ã¨Ã®Ã­: ";
 			cin >> ApartmentToAdd -> Region;
-			cout << "Àäðåñ: ";
+			cout << "Ã€Ã¤Ã°Ã¥Ã±: ";
 			cin >> ApartmentToAdd -> Address;
-			cout << "Ýòàæ: ";
+			cout << "ÃÃ²Ã Ã¦: ";
 			ApartmentToAdd -> Floor = CheckForInt();
-			cout << "Ïëîùàäü: ";
+			cout << "ÃÃ«Ã®Ã¹Ã Ã¤Ã¼: ";
 			ApartmentToAdd -> Area = Check();
-			cout << "Òèï: ";
+			cout << "Ã’Ã¨Ã¯: ";
 			cin >> ApartmentToAdd -> Type;
-			cout << "Öåíà: : ";
+			cout << "Ã–Ã¥Ã­Ã : : ";
 			ApartmentToAdd -> Cost = Check();
 			info -> AddApartment(ApartmentToAdd);
 
-			cout << "Äàííûå î ñîáñòâåííèêå:\n";
+			cout << "Ã„Ã Ã­Ã­Ã»Ã¥ Ã® Ã±Ã®Ã¡Ã±Ã²Ã¢Ã¥Ã­Ã­Ã¨ÃªÃ¥:\n";
 			Client* ClientToAdd = new Client("", "", "");
-			cout << "Ôàìèëèÿ: ";
+			cout << "Ã”Ã Ã¬Ã¨Ã«Ã¨Ã¿: ";
 			cin >> ClientToAdd -> Surname;
-			cout << "Èìÿ: ";
+			cout << "ÃˆÃ¬Ã¿: ";
 			cin >> ClientToAdd -> Name;
-			cout << "Òåëåôîí: ";
+			cout << "Ã’Ã¥Ã«Ã¥Ã´Ã®Ã­: ";
 			cin >> ClientToAdd -> Phone;
 			info -> AddClient(ClientToAdd);
 			bool q;
@@ -559,81 +555,81 @@ struct Menu
 		string type = "";
 		int floor1 = 0, floor0 = 0;
 		int price1 = 0, price0 = 0;
-		cout << "\tÒèï: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+		cout << "\tÃ’Ã¨Ã¯: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 		int answer;
 		answer = CheckForInt();
 		if (answer == 1)
 		{
-			cout << "\t\tÒèï: ";
+			cout << "\t\tÃ’Ã¨Ã¯: ";
 			cin >> type;
 		}
 
-		cout << "\tÐåãèîí: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+		cout << "\tÃÃ¥Ã£Ã¨Ã®Ã­: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 		int answer1;
 		answer1 = CheckForInt();
 		if (answer1 == 1)
 		{
-			cout << "\t\tÏðèîðèòåòíûé ðåãèîí: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+			cout << "\t\tÃÃ°Ã¨Ã®Ã°Ã¨Ã²Ã¥Ã²Ã­Ã»Ã© Ã°Ã¥Ã£Ã¨Ã®Ã­: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 			int answer1_1;
 			answer1_1 = CheckForInt();
 			if (answer1_1 == 1)
 			{
-				cout << "\t\t\tÏðèîðèòåòíûé ðåãèîí: ";
+				cout << "\t\t\tÃÃ°Ã¨Ã®Ã°Ã¨Ã²Ã¥Ã²Ã­Ã»Ã© Ã°Ã¥Ã£Ã¨Ã®Ã­: ";
 				cin >> region1;
 			}
 
-			cout << "\t\tÍåæåëàòåëüíûé ðåãèîí: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+			cout << "\t\tÃÃ¥Ã¦Ã¥Ã«Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã© Ã°Ã¥Ã£Ã¨Ã®Ã­: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 			int answer1_2;
 			answer1_2 = CheckForInt();
 			if (answer1_2 == 1)
 			{
-				cout << "\t\t\tÍåæåëàòåëüíûé ðåãèîí: ";
+				cout << "\t\t\tÃÃ¥Ã¦Ã¥Ã«Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã© Ã°Ã¥Ã£Ã¨Ã®Ã­: ";
 				cin >> region0;
 			}
 		}
-		cout << "\tÝòàæ: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+		cout << "\tÃÃ²Ã Ã¦: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 		int answer2;
 		answer2 = CheckForInt();
 		if (answer2 == 1)
 		{
-			cout << "\t\tÏðèîðèòåòíûé ýòàæ: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+			cout << "\t\tÃÃ°Ã¨Ã®Ã°Ã¨Ã²Ã¥Ã²Ã­Ã»Ã© Ã½Ã²Ã Ã¦: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 			int answer2_1;
 			answer2_1 = CheckForInt();
 			if (answer2_1 == 1)
 			{
-				cout << "\t\t\tÏðèîðèòåòíûé ýòàæ: ";
+				cout << "\t\t\tÃÃ°Ã¨Ã®Ã°Ã¨Ã²Ã¥Ã²Ã­Ã»Ã© Ã½Ã²Ã Ã¦: ";
 				floor1 = CheckForInt();
 			}
 
-			cout << "\t\tÍåæåëàòåëüíûé ýòàæ: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+			cout << "\t\tÃÃ¥Ã¦Ã¥Ã«Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã© Ã½Ã²Ã Ã¦: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 			int answer2_2;
 			answer2_2 = CheckForInt();
 			if (answer2_2 == 1)
 			{
-				cout << "\t\t\tÍåæåëàòåëüíûé ýòàæ: ";
+				cout << "\t\t\tÃÃ¥Ã¦Ã¥Ã«Ã Ã²Ã¥Ã«Ã¼Ã­Ã»Ã© Ã½Ã²Ã Ã¦: ";
 				floor0 = CheckForInt();
 			}
 		}
-		cout << "\tÌåíüøå(Áîëüøå), ÷åì ââåä¸ííàÿ âàìè ñóììà (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+		cout << "\tÃŒÃ¥Ã­Ã¼Ã¸Ã¥(ÃÃ®Ã«Ã¼Ã¸Ã¥), Ã·Ã¥Ã¬ Ã¢Ã¢Ã¥Ã¤Â¸Ã­Ã­Ã Ã¿ Ã¢Ã Ã¬Ã¨ Ã±Ã³Ã¬Ã¬Ã  (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 		int answer3;
 		answer3 = CheckForInt();
 		if (answer3 == 1)
 		{
-			cout << "\t\tÌåíüøå, ÷åì: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+			cout << "\t\tÃŒÃ¥Ã­Ã¼Ã¸Ã¥, Ã·Ã¥Ã¬: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 			int answer3_1;
 			answer3_1 = CheckForInt();
 			if (answer3_1 == 1)
 			{
-				cout << "\t\t\tÌåíüøå, ÷åì: ";
+				cout << "\t\t\tÃŒÃ¥Ã­Ã¼Ã¸Ã¥, Ã·Ã¥Ã¬: ";
 				price0 = CheckForInt();
 			}
 
-			cout << "\t\tÁîëüøå, ÷åì: (Åñëè åñòü ïîæåëàíèÿ, ââåäèòå 1)\n";
+			cout << "\t\tÃÃ®Ã«Ã¼Ã¸Ã¥, Ã·Ã¥Ã¬: (Ã…Ã±Ã«Ã¨ Ã¥Ã±Ã²Ã¼ Ã¯Ã®Ã¦Ã¥Ã«Ã Ã­Ã¨Ã¿, Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1)\n";
 			int answer3_2;
 			answer3_2 = CheckForInt();
 			if (answer3_2 == 1)
 			{
-				cout << "\t\t\tÁîëüøå, ÷åì: ";
+				cout << "\t\t\tÃÃ®Ã«Ã¼Ã¸Ã¥, Ã·Ã¥Ã¬: ";
 				price1 = CheckForInt();
 			}
 		}
@@ -645,7 +641,7 @@ struct Menu
 	static void Delete(Base* info)
 	{
 		Apartment* ApartmentToSell = new Apartment("", "", 0, 0.0, "", 0);
-		cout << "Ââåäèòå àäðåñ: ";
+		cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã Ã¤Ã°Ã¥Ã±: ";
 		cin >> ApartmentToSell -> Address;
 
 		FILE *p = fopen("D:\\DZ\\2 sem\\Proga\\Apartment3.txt", "r");
@@ -671,7 +667,7 @@ struct Menu
 					if (info -> RemoveApartment(ApartmentToDelete) && \
 						info -> RemoveClient(ClientToDelete))
 						{
-							cout << "Ïîçäðàâëÿåì ñ ïîêóïêîé!.\n";
+							cout << "ÃÃ®Ã§Ã¤Ã°Ã Ã¢Ã«Ã¿Ã¥Ã¬ Ã± Ã¯Ã®ÃªÃ³Ã¯ÃªÃ®Ã©!.\n";
 							Save(info);
 							break;
 						}
@@ -680,13 +676,13 @@ struct Menu
 		}
 		fclose(p);
 		if(check == false)
-			cout << "Îøèáêà. Ïîïðîáóéòå ñíîâà.\n";
+			cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ . ÃÃ®Ã¯Ã°Ã®Ã¡Ã³Ã©Ã²Ã¥ Ã±Ã­Ã®Ã¢Ã .\n";
 	}
 	// info function
 	static void Information(Base* info)
 	{
 		Apartment* ApartmentToKnow = new Apartment("", "", 0, 0.0, "", 0);
-		cout << "Ââåäèòå àäðåñ: ";
+		cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã Ã¤Ã°Ã¥Ã±: ";
 		cin >> ApartmentToKnow -> Address;
 
 		FILE *p = fopen("D:\\DZ\\2 sem\\Proga\\Apartment3.txt", "r");
@@ -716,7 +712,7 @@ struct Menu
 		}
 		fclose(p);
 		if(check == false)
-			cout << "Îøèáêà. Ïîïðîáóéòå åù¸ ðàç.\n";
+			cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ . ÃÃ®Ã¯Ã°Ã®Ã¡Ã³Ã©Ã²Ã¥ Ã¥Ã¹Â¸ Ã°Ã Ã§.\n";
 	}
 
 	// save function
@@ -751,7 +747,7 @@ struct Menu
 	{
 		cin.clear();
 		while (cin.get() != '\n');
-		cout << "Îøèáêà!\nÂâåäèòå âåðíîå ÷èñëî: ";
+		cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ !\nÃ‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¢Ã¥Ã°Ã­Ã®Ã¥ Ã·Ã¨Ã±Ã«Ã®: ";
 	}
 	return c;
  }
@@ -768,7 +764,7 @@ struct Menu
 			success = true;
 		}
 		else
-			cout << "Çíà÷åíèå ââåäåíî íåâåðíî. Ïîâòîðèòå ââîä" << endl;
+			cout << "Ã‡Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ Ã¢Ã¢Ã¥Ã¤Ã¥Ã­Ã® Ã­Ã¥Ã¢Ã¥Ã°Ã­Ã®. ÃÃ®Ã¢Ã²Ã®Ã°Ã¨Ã²Ã¥ Ã¢Ã¢Ã®Ã¤" << endl;
 			cin.clear();
 			_flushall();
 	}
